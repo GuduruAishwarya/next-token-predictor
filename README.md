@@ -4,6 +4,9 @@
 
 An interactive web application built with **Next.js** to visualize how Large Language Models (LLMs) predict the next token in a sequence. This project runs entirely locally using **Ollama**.
 
+## Deployed URL
+https://next-token-predictor-demo.vercel.app/ 
+
 ## 🛠️ Features
 
 * **Local Inference:** Powered by Ollama (runs on your machine).
@@ -22,7 +25,27 @@ An interactive web application built with **Next.js** to visualize how Large Lan
 ollama pull llama3
 
 ```
+Set up ngrok
+Ngrok creates a public URL that tunnels traffic to your local computer.
 
+Install ngrok: Download and install ngrok.
+
+Authenticate: Get your Authtoken from the ngrok dashboard and run:
+
+Bash
+ngrok config add-authtoken YOUR_AUTHTOKEN
+Start Tunnel:
+
+Bash
+ngrok http 11434
+Copy URL: Copy the Forwarding URL provided (e.g., https://random-name.ngrok-free.app).
+
+To tell Ollama to listen for requests from the internet
+Under "User variables", click "New...".
+Set Variable name to: OLLAMA_HOST
+Set Variable value to: 0.0.0.0
+
+Now re-start ollama using cmd: ollama serve
 
 
 ### 2. Installation
@@ -80,5 +103,7 @@ You can change the model used in `app/api/next-token/route.ts`:
 
 ```typescript
 const MODEL = 'llama3'; // Ensure this model is pulled in Ollama
+
+
 
 ```

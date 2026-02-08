@@ -34,6 +34,7 @@ export async function POST(req) {
     })
   });
 
+  console.log(response)
   const data = await response.json();
 
   const text = data.response;

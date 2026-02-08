@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
-
-const OLLAMA_URL = "http://localhost:11434/api/generate";
-const MODEL = "llama3";
-
+const OLLAMA_URL = process.env.NEXT_PUBLIC_OLLAMA_API_URL || 'http://localhost:11434/api/generate';
+const MODEL = process.env.NEXT_PUBLIC_OLLAMA_MODEL || 'llama3';
 export async function POST(req) {
   const { prompt, temperature, topK } = await req.json();
 

@@ -1,5 +1,3 @@
-Here is the `README.md` file for your **Ollama Next-Token Playground** project.
-
 ---
 
 # 🧠 Ollama Next-Token Playground
